@@ -10,6 +10,19 @@ class Customer
     private $email;
     private $budget;
     private $message;
+    private $date;
+
+   public function getDate()
+    {
+        return $this->date;
+    }
+
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
 
     public function getId()
     {

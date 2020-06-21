@@ -19,11 +19,16 @@ define('CUSTOMER_COLLECTOR_TEXTDOMAIN', 'customer-collector');
 
 require_once CUSTOMER_COLLECTOR_PATH . '/vendor/autoload.php';
 
+$customerFactory = new \ET\CustomerCollector\Repository\CustomerFactory();
+$customerRepository = new \ET\CustomerCollector\Repository\CustomerRepository($customerFactory);
+$template = (new \ET\CustomerCollector\Template\Loader())->get();
+
 $hooks = [
     (new \ET\CustomerCollector\Hooks\PostTypeDefinition()),
-    (new \ET\CustomerCollector\Hooks\CustomFieldsMetaBox((new \ET\CustomerCollector\Template\Loader())->get(),
-        new \ET\CustomerCollector\Repository\CustomerRepository(new \ET\CustomerCollector\Repository\CustomerFactory()))),
+    (new \ET\CustomerCollector\Hooks\CustomFieldsMetaBox($template, $customerRepository, $customerFactory)),
     (new \ET\CustomerCollector\Hooks\Resources()),
+    (new \ET\CustomerCollector\Hooks\Shortcode($template)),
+    (new \ET\CustomerCollector\Hooks\SaveCustomerAjax($customerRepository, $customerFactory))
 ];
 
 foreach ($hooks as $hook) {

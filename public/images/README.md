@@ -1,1 +1,0 @@
-Here goes the images of the front-end pages.

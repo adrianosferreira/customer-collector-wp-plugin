@@ -1,1 +1,0 @@
-Here goes the JS of the admin pages.

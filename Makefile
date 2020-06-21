@@ -8,11 +8,10 @@ build:
 	cp -r templates build
 	cp -r composer.json build
 	cp -r index.php build
-	cp -r plugin-name.php build
-	cp -r README.txt build
-	cp -r uninstall.php build
+	cp -r customer-collector.php build
 	composer install --no-dev --optimize-autoloader -d build/
 	rm -rf build/composer.json
+	rm -rf build/composer.lock
 
 dev:
 	@echo "Installing development version of the plugin"

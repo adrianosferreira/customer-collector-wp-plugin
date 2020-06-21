@@ -11,8 +11,7 @@
     "twig/twig": "^3.0"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-master"
-    ,
+    "roave/security-advisories": "dev-master",
     "10up/wp_mock": "^0.4.2",
     "phpunit/phpunit": "^9"
   },
@@ -23,7 +22,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "ET\\CustomerColletor\\Tests\\": "tests/"
+      "ET\\CustomerCollector\\Tests\\": "tests/"
     }
   }
 }

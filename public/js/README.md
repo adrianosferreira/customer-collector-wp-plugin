@@ -1,1 +1,0 @@
-Here goes the JS files of the front-end pages.

@@ -1,0 +1,55 @@
+.et-customer-collector-frontend-form {
+	font-family: "Arial Hebrew", Arial, sans-serif;
+	font-size: 16px;
+
+	label {
+		display: block;
+		margin-top: 20px;
+	}
+
+	input {
+		width: 100%;
+	}
+
+	span {
+		display: block;
+	}
+
+	textarea {
+		width: auto;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.et-customer-frontend-form-submit {
+		margin-top: 15px;
+		width: 200px;
+	}
+
+	.notice {
+		padding: 10px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.notice-error {
+		display: none;
+		border: 1px solid darkred;
+		background: indianred;
+		color: white;
+	}
+
+	.notice-success {
+		display: none;
+		border: 1px solid darkgreen;
+		background: darkseagreen;
+		color: darkgreen;
+	}
+
+	.notice-info {
+		display: none;
+		border: 1px solid steelblue;
+		background: lightblue;
+		color: steelblue;
+	}
+}

@@ -1,18 +1,21 @@
 <?php
 
-namespace ET\CustomerCollector\Hooks;
+namespace ET\CustomerCollector\Tests\Hooks;
 
-class PostTypeDefinition implements IHook
+use ET\CustomerCollector\Hooks\PostTypeDefinition;
+use WP_Mock\Tools\TestCase;
+
+class PostTypeDefinitionTest extends TestCase
 {
-
-    const POST_TYPE = 'et-customer';
-
-    public function registerHooks()
-    {
-        add_action('init', array($this, 'register'));
+    public function setUp(): void {
+        \WP_Mock::setUp();
     }
 
-    public function register() {
+    /**
+     * @test
+     */
+    public function itRegisterPostType()
+    {
         $labels = array(
             'name'               => __('Customers', CUSTOMER_COLLECTOR_TEXTDOMAIN),
             'singular_name'      => __('Customers', CUSTOMER_COLLECTOR_TEXTDOMAIN),
@@ -56,6 +59,30 @@ class PostTypeDefinition implements IHook
             'supports'           => array('title')
         );
 
-        register_post_type(self::POST_TYPE, $args);
+        \WP_Mock::userFunction('register_post_type', [
+            'times' => 1,
+            'args' => [
+                'et-customer',
+                $args
+            ]
+        ]);
+
+        $subject = new PostTypeDefinition();
+        $subject->register();
+    }
+
+    /**
+     * @test
+     */
+    public function itRegistersHooks()
+    {
+        $subject = new PostTypeDefinition();
+        \WP_Mock::expectActionAdded('init', array($subject, 'register'));
+        $subject->registerHooks();
+    }
+
+    public function tearDown(): void {
+        $this->assertConditionsMet();
+        \WP_Mock::tearDown();
     }
 }

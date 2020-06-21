@@ -1,0 +1,48 @@
+.et-customer-collector-frontend-form {
+  font-family: "Arial Hebrew", Arial, sans-serif;
+  font-size: 16px;
+}
+.et-customer-collector-frontend-form label {
+  display: block;
+  margin-top: 20px;
+}
+.et-customer-collector-frontend-form input {
+  width: 100%;
+}
+.et-customer-collector-frontend-form span {
+  display: block;
+}
+.et-customer-collector-frontend-form textarea {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+.et-customer-collector-frontend-form .et-customer-frontend-form-submit {
+  margin-top: 15px;
+  width: 200px;
+}
+.et-customer-collector-frontend-form .notice {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.et-customer-collector-frontend-form .notice-error {
+  display: none;
+  border: 1px solid darkred;
+  background: indianred;
+  color: white;
+}
+.et-customer-collector-frontend-form .notice-success {
+  display: none;
+  border: 1px solid darkgreen;
+  background: darkseagreen;
+  color: darkgreen;
+}
+.et-customer-collector-frontend-form .notice-info {
+  display: none;
+  border: 1px solid steelblue;
+  background: lightblue;
+  color: steelblue;
+}
+
+/*# sourceMappingURL=et-frontend-form.css.map */

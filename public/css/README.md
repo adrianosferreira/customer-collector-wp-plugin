@@ -1,1 +1,0 @@
-Here goes the CSS files of the front-end pages.

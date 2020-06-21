@@ -1,0 +1,28 @@
+<form class="et-customer-collector-frontend-form">
+	{% for field in fields %}
+		<label for="{{ field.name }}">
+			<span>{{ field.label }}</span>
+			{% if field.type == 'textarea' %}
+				<textarea name="{{ field.name }}" id="{{ field.name }}" rows="{{ field.rows }}" cols="{{ field.cols }}" maxlength="{{ field.max_length }}"></textarea>
+			{% else %}
+				<input {{ field.required ? 'required' : '' }} type="{{ field.type }}" name="{{ field.name }}" maxlength="{{ field.max_length }}" />
+			{% endif %}
+		</label>
+
+	{% endfor %}
+
+	<input type="hidden" class="current-date" name="current-date" value="{{ postDate }}" />
+	<div class="notice notice-success">
+		{{ success }}
+	</div>
+
+	<div class="notice notice-error">
+		{{ error }}
+	</div>
+
+	<div class="notice notice-info">
+		{{ info }}
+	</div>
+
+	<input class="et-customer-frontend-form-submit" type="submit" value="{{ submit }}">
+</form>

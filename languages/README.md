@@ -1,1 +1,0 @@
-Here goes the languages files of the plugin.
